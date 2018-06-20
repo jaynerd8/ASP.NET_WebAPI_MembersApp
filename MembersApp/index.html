@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        var getMembers = function () {
+            $.ajax('api/members', { type: "GET", success: printList });
+        };
+
+        var printList = function (m) {
+            $('#tbl_list tr').remove();
+            for (var i = 0; i < m.length; i++) {
+                $('#tbl_list').append('<tr><td>' + m[i].Id + '1</td><td>' + m[i].Name + '1</td><td>' + m[i].Level + '1</td></tr>');
+            }
+        };
+
+        $(function () {
+            getMembers();
+        });
+    </script>
+    <title>Index</title>
+</head>
+<body>
+    <table id="tbl_list">
+        <tr><td>Member List</td></tr>
+    </table>
+</body>
+</html>
