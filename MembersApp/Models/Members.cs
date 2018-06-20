@@ -26,5 +26,35 @@ namespace MembersApp.Models
         {
             return MemberList;
         }
+
+        public Member FindById(string id)
+        {
+            return MemberList.Where(m => m.Id == id).FirstOrDefault();
+        }
+
+        public bool AddMember(Member m)
+        {
+            MemberList.Add(m);
+            return true;
+        }
+
+        public bool RemoveMember(string id)
+        {
+            Member m = FindById(id);
+            MemberList.Remove(m);
+            return true;
+        }
+
+        public bool ModifyMember(Member m)
+        {
+            Member targetMember = FindById(m.Id);
+            if (targetMember == null)
+            {
+                return false;
+            }
+            targetMember.Name = m.Name;
+            targetMember.Level = m.Level;
+            return true;
+        }
     }
 }
