@@ -8,10 +8,10 @@
             $.ajax('api/members', { type: "GET", success: printList });
         };
 
-        var printList = function (m) {
+        var printList = function (d) {
             $('#tbl_list tr').remove();
-            for (var i = 0; i < m.length; i++) {
-                $('#tbl_list').append('<tr><td>' + m[i].Id + '1</td><td>' + m[i].Name + '1</td><td>' + m[i].Level + '1</td></tr>');
+            for (var i = 0; i < d.length; i++) {
+                $('#tbl_list').append('<tr><td>' + d[i].Id + '</td><td>' + d[i].Name + '</td><td>' + d[i].Level + '</td></tr>');
             }
         };
 
