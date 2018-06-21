@@ -8,11 +8,16 @@
             $.ajax('api/members', { type: "GET", success: printList });
         };
 
+        var removeMember = function (id) {
+            $.ajax('api/members/' + id, { type: "DELETE", success: printList });
+        }
+
         var printList = function (d) {
             $('#tbl_list tr').remove();
             for (var i = 0; i < d.length; i++) {
-                $('#tbl_list').append('<tr><td>' + d[i].Id + '</td><td>' + d[i].Name + '</td><td>' + d[i].Level + '</td></tr>');
-            }
+                $('#tbl_list').append('<tr><td>' + d[i].Id + '</td><td>' + d[i].Name + '</td><td>' + d[i].Level + '</td><td>'
+                    + '<input type="button" value="Delete" onclick="removeMember(\'' + d[i].Id + '\')" />' + '</td></tr>');
+            };
         };
 
         $(function () {
@@ -22,8 +27,11 @@
     <title>Index</title>
 </head>
 <body>
+    <div>
+        <h1>Member List</h1>
+    </div>
     <table id="tbl_list">
-        <tr><td>Member List</td></tr>
+        <tr><td>The list will be available in few seconds.</td></tr>
     </table>
 </body>
 </html>

@@ -12,6 +12,7 @@ namespace MembersApp.Controllers
     {
         private Members members = Members.GetMembers();
 
+        [HttpGet]
         public IEnumerable<Member> GetMembers()
         {
             return members.GetMember();
@@ -27,6 +28,7 @@ namespace MembersApp.Controllers
             return members.AddMember(m);
         }
 
+        [HttpDelete]
         public bool RemoveMember(string id)
         {
             return members.RemoveMember(id);
