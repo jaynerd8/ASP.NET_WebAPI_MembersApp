@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@Model MembersApp.Models.Member
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width" />
@@ -9,8 +15,13 @@
         };
 
         var removeMember = function (id) {
-            $.ajax('api/members/' + id, { type: "DELETE", success: printList });
-        }
+            $.ajax('api/members/' + id, { type: "DELETE", success: getMembers });
+        };
+
+        var addMember = function () {
+            var member = { Id: $('#Id').val(), Name = $('#Name').val(), Level = $('#Level').val() };
+            $.ajax({ type: "POST", data: JSON.stringify(member), url: 'api/members/AddMember', contentType: 'application/json', success: getMembers });
+        };
 
         var printList = function (d) {
             $('#tbl_list tr').remove();
@@ -33,5 +44,6 @@
     <table id="tbl_list">
         <tr><td>The list will be available in few seconds.</td></tr>
     </table>
+    <br />
 </body>
 </html>

@@ -23,6 +23,7 @@ namespace MembersApp.Controllers
             return members.FindById(id);
         }
 
+        [HttpPost]
         public bool AddMember(Member m)
         {
             return members.AddMember(m);
