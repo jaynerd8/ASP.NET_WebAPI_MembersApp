@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MembersApp.Models.Member
+
+@{
     Layout = null;
 }
 
@@ -16,10 +18,10 @@
             $.ajax('api/members/' + id, { type: "DELETE", success: getMembers });
         };
 
-        var addMember = function () {
-            var member = { Id: $('#Id').val(), Name = $('#Name').val(), Level = $('#Level').val() };
-            $.ajax({ type: "POST", data: JSON.stringify(member), url: 'api/members/AddMember', contentType: 'application/json', success: getMembers });
-        };
+        //var addMember = function () {
+        //    var member = { Id: $('#Id').val(), Name = $('#Name').val(), Level = $('#Level').val() };
+        //    $.ajax({ type: "POST", data: JSON.stringify(member), url: 'api/members/AddMember', contentType: 'application/json', success: getMembers });
+        //};
 
         var printList = function (d) {
             $('#tbl_list tr').remove();
@@ -43,5 +45,9 @@
         <tr><td>The list will be available in few seconds.</td></tr>
     </table>
     <br />
+    @Html.TextBoxFor(x => x.Id)<br />
+    @Html.TextBoxFor(x => x.Name)<br />
+    @Html.TextBoxFor(x => x.Level)<br />
+    <input type="button" value="Add" onclick="javascript: addMember()" />
 </body>
 </html>
