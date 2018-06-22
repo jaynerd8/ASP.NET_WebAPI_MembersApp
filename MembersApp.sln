@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembersApp", "MembersApp\MembersApp.csproj", "{6B107701-A009-4A9E-A87E-B64764AC22D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MembersApp", "MembersApp\MembersApp.csproj", "{BF5F8363-1229-4739-A521-7482BE5BA820}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6B107701-A009-4A9E-A87E-B64764AC22D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B107701-A009-4A9E-A87E-B64764AC22D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B107701-A009-4A9E-A87E-B64764AC22D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B107701-A009-4A9E-A87E-B64764AC22D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF5F8363-1229-4739-A521-7482BE5BA820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF5F8363-1229-4739-A521-7482BE5BA820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF5F8363-1229-4739-A521-7482BE5BA820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF5F8363-1229-4739-A521-7482BE5BA820}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7C8349C7-A215-4B83-88D2-A3776DE12957}
+		SolutionGuid = {8DAC7047-7DCD-4812-83DA-D00794EF29E8}
 	EndGlobalSection
 EndGlobal
