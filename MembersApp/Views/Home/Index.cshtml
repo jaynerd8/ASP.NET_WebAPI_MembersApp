@@ -18,16 +18,24 @@
             $.ajax('api/members/' + id, { type: "DELETE", success: getMembers });
         };
 
-        //var addMember = function () {
-        //    var member = { Id: $('#Id').val(), Name = $('#Name').val(), Level = $('#Level').val() };
-        //    $.ajax({ type: "POST", data: JSON.stringify(member), url: 'api/members/AddMember', contentType: 'application/json', success: getMembers });
-        //};
+        var addMember = function () {
+            var member = { Id: $('#Id').val(), Name: $('#Name').val(), Level: $('#Level').val() };
+            $.ajax({ type: "POST", data: JSON.stringify(member), url: 'api/members/AddMember', contentType: 'application/json', success: getMembers });
+        };
 
         var printList = function (d) {
             $('#tbl_list tr').remove();
             for (var i = 0; i < d.length; i++) {
                 $('#tbl_list').append('<tr><td>' + d[i].Id + '</td><td>' + d[i].Name + '</td><td>' + d[i].Level + '</td><td>'
                     + '<input type="button" value="Delete" onclick="removeMember(\'' + d[i].Id + '\')" />' + '</td></tr>');
+
+                // DOM methods
+                //var inputElement = document.createElement('input');
+                //inputElement.type = "button";
+                //inputElement.addEventListener('click', function () {
+                //    removeMember(d[i].Id);
+                //});
+                //document.body.appendChild(inputElement);
             };
         };
 
@@ -45,9 +53,9 @@
         <tr><td>The list will be available in few seconds.</td></tr>
     </table>
     <br />
-    @Html.TextBoxFor(x => x.Id)<br />
-    @Html.TextBoxFor(x => x.Name)<br />
-    @Html.TextBoxFor(x => x.Level)<br />
+    @Html.TextBoxFor(x => x.Id, new { Id = "ID" })<br />
+    @Html.TextBoxFor(x => x.Name, new { Id = "Name" })<br />
+    @Html.TextBoxFor(x => x.Level, new { Id = "Level" })<br />
     <input type="button" value="Add" onclick="javascript: addMember()" />
 </body>
 </html>
